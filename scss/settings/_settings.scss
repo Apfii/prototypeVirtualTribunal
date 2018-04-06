@@ -65,6 +65,11 @@ $nav-main-width: 300px;
 
 $padding: $unit;
 
+//o-button
+$o-button-margin:2em;
+$o-button-size:4em;
+//mobile header
+$mobile-header-height: $o-button-size + 2*$o-button-margin;
 // Icons 
 $icon: 1.2em;
 $icon-big: 2.5em;

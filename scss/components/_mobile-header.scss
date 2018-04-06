@@ -1,0 +1,25 @@
+// =====================================================
+// Mobile Header
+// =====================================================
+.mobile-header{
+    display:none;
+}
+.mobile-header__burger{
+    position: absolute;
+    top:$o-button-margin;
+    left:$o-button-margin;
+    background-color: $main-color;
+    color:$white;
+}
+.mobile-header__logo{
+    height:$mobile-header-height;
+    margin:0 auto;
+    display: block;
+}
+
+@media screen and (max-width: $to-medium) {
+    .mobile-header {
+        display: block;
+        height:$mobile-header-height;
+    }
+}

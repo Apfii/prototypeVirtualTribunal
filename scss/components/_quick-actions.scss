@@ -1,0 +1,14 @@
+// =====================================================
+// Quick Actions
+// =====================================================
+
+ .quick-actions__btn {
+    position: absolute;
+    bottom: $o-button-margin;
+    right: $o-button-margin;
+    padding: 1.2em;
+    color: $white;
+    cursor: pointer;
+    background-color: $important;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}

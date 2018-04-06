@@ -1,0 +1,17 @@
+// =====================================================
+// Content
+// =====================================================
+
+.content {
+    width: calc(100% - #{$nav-main-width});
+    height: 100vh;
+    margin-left: $nav-main-width;
+    background-color: $gray;
+}
+
+@media screen and (max-width: $to-medium) {
+    .content {
+        width: 100%;
+        margin-left: 0;
+    }
+}

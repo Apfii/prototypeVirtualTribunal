@@ -3,8 +3,8 @@
 // ==========================================================================
 
 .o-button {
-    width: 4em;
-    height: 4em;
+    width: $o-button-size;
+    height: $o-button-size;
     border: none;
     border-radius: 50%;
     color: $black;

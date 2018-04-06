@@ -1,0 +1,31 @@
+// =====================================================
+// Case Header
+// =====================================================
+
+.cases-header {
+    height: $header-height;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8em;
+    background-color: $white;
+}
+
+.cases-header__icon {
+    width: 25px;
+}
+
+@media screen and (max-width: $to-medium) {
+    .cases-header {
+        height: 6em;
+        padding: 0 3em;
+    }
+    .cases-header__case-indicator{
+        display: none;
+    }
+}
+@media screen and (min-width: $from-medium) {
+    .cases-header__my-cases {
+        display: none;
+    }
+}
