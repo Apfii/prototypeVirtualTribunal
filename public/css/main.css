@@ -776,15 +776,31 @@ a {
   background-color: #4794c6;
   color: #ffffff; }
 
+.mobile-header__burger.-new::after {
+  content: "";
+  display: inline-block;
+  min-width: 7px;
+  min-height: 7px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  border-radius: 50%;
+  background-color: #cf2f52; }
+
 .mobile-header__logo {
   height: 8em;
   margin: 0 auto;
-  display: block; }
+  display: block;
+  padding: 1em 0; }
 
 @media screen and (max-width: 999px) {
   .mobile-header {
+    position: relative;
     display: block;
-    height: 8em; } }
+    height: 8em;
+    background-color: #ffffff;
+    z-index: 1;
+    box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.2); } }
 
 .nav-main {
   width: 20.625rem;
@@ -853,6 +869,7 @@ a {
 
 .profile-btn {
   position: absolute;
+  z-index: 2;
   top: 2em;
   right: 2em;
   background-color: #4794c6;

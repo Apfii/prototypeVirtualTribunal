@@ -11,15 +11,32 @@
     background-color: $main-color;
     color:$white;
 }
+.mobile-header__burger.-new::after{
+    content: "";
+    display: inline-block;
+    min-width: 7px;
+    min-height: 7px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    border-radius: 50%;
+    background-color:$important;
+}
 .mobile-header__logo{
     height:$mobile-header-height;
     margin:0 auto;
     display: block;
+    padding:1em 0;
 }
 
 @media screen and (max-width: $to-medium) {
     .mobile-header {
+        position:relative;
         display: block;
         height:$mobile-header-height;
+        background-color: $white;
+        z-index:1;
+        box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.2);
+
     }
 }
