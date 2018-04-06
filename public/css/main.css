@@ -568,10 +568,10 @@ html {
   @media (max-width: 699px) {
     html {
       font-size: 12px; } }
-  @media (min-width: 700px) and (max-width: 999px) {
+  @media (min-width: 700px) and (max-width: 1099px) {
     html {
       font-size: 13px; } }
-  @media (min-width: 1000px) and (max-width: 1599px) {
+  @media (min-width: 1100px) and (max-width: 1599px) {
     html {
       font-size: 14px; } }
   @media (min-width: 1600px) {
@@ -586,6 +586,15 @@ body {
   background: #4794c6;
   text-shadow: none;
   color: #ffffff; }
+
+main {
+  width: 100%;
+  height: 100vh; }
+
+@media screen and (min-width: 1100px) {
+  main {
+    width: calc(100% - 20.625rem);
+    margin-left: 20.625rem; } }
 
 a {
   color: #4794c6;
@@ -744,27 +753,16 @@ a {
 .cases-header__icon {
   width: 25px; }
 
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 1099px) {
   .cases-header {
     height: 6em;
     padding: 0 3em; }
   .cases-header__case-indicator {
     display: none; } }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1100px) {
   .cases-header__my-cases {
     display: none; } }
-
-.content {
-  width: calc(100% - 350px);
-  height: 100vh;
-  margin-left: 350px;
-  background-color: #e9eef2; }
-
-@media screen and (max-width: 999px) {
-  .content {
-    width: 100%;
-    margin-left: 0; } }
 
 .mobile-header {
   display: none; }
@@ -781,7 +779,7 @@ a {
   margin: 0 auto;
   display: block; }
 
-@media screen and (max-width: 999px) {
+@media screen and (max-width: 1099px) {
   .mobile-header {
     display: block;
     height: 8em; } }
@@ -847,8 +845,8 @@ a {
     bottom: 2px;
     border-radius: 50%; }
 
-@media screen and (max-width: 1080px) {
-  .nav {
+@media screen and (max-width: 1099px) {
+  .nav-main {
     display: none; } }
 
 .profile-btn {
