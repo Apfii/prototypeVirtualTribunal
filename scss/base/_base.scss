@@ -43,8 +43,8 @@ main {
 
 @media screen and (min-width: $from-medium) {
   main {
-    width: calc(100% - #{rem($nav-main-width)});
-    margin-left: rem($nav-main-width);
+    width: calc(100% - #{rem($aside-width)});
+    margin-left: rem($aside-width);
   }
 }
 

@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="lib/fa-solid.min.css">
     <link rel="stylesheet" href="lib/fontawesome.min.css">
     <link rel="stylesheet" href="css/main.css"/>
-    <script src="scripts.js"></script>
+    <script src="js/scripts.js"></script>
 </head>
 <body>
+    <button class="o-button profile-btn"><i class="fas fa-user"></i></button>
     <header class="mobile-header">
         <button class="o-button mobile-header__burger -new"><i class="fas fa-bars"></i></button>
         <img class="mobile-header__logo" src="img/logo_small.png" alt=""/>
     </header>
-
     <aside class="nav-main">
         <header class="nav-main__header">
             <img class="nav-main__logo" src="img/logo.png" alt="Cyberjustice"/>
@@ -41,38 +41,40 @@
                 </a>
             </li>
             <li class="nav-main__item">
-                <a class="nav-main__link" href="#">
+                <a class="nav-main__link" href="#">    
+                    <span class="nav-main__label">
                         <i class="nav-main__icon fas fa-file"></i>
-                    <span class="nav-main__label">Claims</span>
+                        Claims
+                    </span>
                     <div class="nav-main__indicator -none">0</div>
                 </a>
             </li>
             <li class="nav-main__item">
                 <a class="nav-main__link" href="#">
+                    <span class="nav-main__label">
                         <i class="nav-main__icon fas fa-comment-alt"></i>
-                    <span class="nav-main__label">Chat</span>
+                        Chat
+                    </span>
                     <div class="nav-main__indicator -new">2</div>
                 </a>
             </li>
             <li class="nav-main__item">
                 <a class="nav-main__link" href="#">
-                    <i class="nav-main__icon far fa-calendar"></i>
-                    <span class="nav-main__label">Events</span>
+                    <span class="nav-main__label">
+                        <i class="nav-main__icon far fa-calendar"></i>
+                        Events
+                    </span>
                     <div class="nav-main__indicator">5</div>
                 </a>
             </li>
         </ul>
-        <a class="nav-main__language-switcher">
-
-        </a>
+        <a class="nav-main__language-switcher"></a>
         <footer class="nav-main__footer">
             <p class="nav-main__copyrights"></p>
             <p class="nav-main__company"></p>
         </footer>
-    </aside>
-    <button class="o-button profile-btn"><i class="fas fa-user"></i></button>        
-    
-    <main class="content">
+    </aside>        
+    <main>
         <section class="cases-header">
             <img class="cases-header__icon" src="img/folder.svg" alt="Case Icon"/>
             <h1 class="cases-header__title">2018-00014</h1>
