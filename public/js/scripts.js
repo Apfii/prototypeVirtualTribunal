@@ -1,20 +1,3 @@
-
-// Default values
-var SLIDER_SIZE = 5;
-var TOTAL_ITEMS = 8;
-var INDEX = 0;
-
-//
-var item_width = null;
-
-// Slider
-var slider1 = {
-    e: null,
-    x: 0,
-    isHovered: false,
-    isScrollForward: null
-};
-
 window.onload = function() {
     setupSlider1();
     setupSlider2();
@@ -25,12 +8,28 @@ window.onload = function() {
 
 function setupSlider1() {
 
-    slider1.e = document.getElementById("test-slider-1");
-    item_width = slider1.e.children[0].children[0].offsetWidth;
+    // Default values
+    var SLIDER_SIZE = 5;
+    var TOTAL_ITEMS = 8;
+    var INDEX = 0;
 
-    var prev1 = slider1.e.parentElement.children[0];
-    var next1 = slider1.e.parentElement.children[1];
+    // Slider
+    var slider = {
+        e: null,
+        x: 0,
+        isHovered: false,
+        isScrollForward: null
+    };
 
+    // Get element
+    slider.e = document.getElementById("test-slider-1");
+    var item_width = slider.e.children[0].children[0].offsetWidth;
+
+    // Get triggers
+    var prev = slider.e.parentElement.children[0];
+    var next = slider.e.parentElement.children[1];
+
+    // Define translation function
     var interval;
     var translateSlider = function(slider) {
         interval = setInterval(function(){
@@ -43,20 +42,19 @@ function setupSlider1() {
         }, 10)
     }
     
-    prev1.onmouseenter = function() {
-        slider1.isHovered = true;
-        slider1.isScrollForward = false;
-        translateSlider(slider1);
+    // Attach events
+    prev.onmouseenter = function() {
+        slider.isHovered = true;
+        slider.isScrollForward = false;
+        translateSlider(slider);
     };
-
-    next1.onmouseenter = function() {
-        slider1.isHovered = true;
-        slider1.isScrollForward = true;
-        translateSlider(slider1);
+    next.onmouseenter = function() {
+        slider.isHovered = true;
+        slider.isScrollForward = true;
+        translateSlider(slider);
     };
-
-    next1.onmouseleave = prev1.onmouseleave = function() {
-        slider1.isHovered = false;
+    next.onmouseleave = prev.onmouseleave = function() {
+        slider.isHovered = false;
     };
 }
 
@@ -65,4 +63,34 @@ function setupSlider1() {
 
 function setupSlider2() {
 
+    // Slider
+    var slider = {
+        e: null,
+        x: 0,
+        isDragging: false,
+        mouseStartDragX: null
+    };
+
+    // Get element
+    slider.e = document.getElementById("test-slider-2");
+
+    // Define translation function
+    var interval;
+    var dragSlider = function(slider, event) {
+        interval = setInterval(function(){
+            if(slider.isDragging) {
+                var offsetX = slider.mouseStartDragX - event.clientX;
+                slider.e.style = "transform: translateX(-"+offsetX+"px)";
+            } else {
+                clearInterval(interval);
+            } 
+        }, 50)
+    }
+    
+    // Attach events
+    slider.e.ondrag = function(event) {
+        slider.isDragging = true;
+        slider.mouseStartDragX = event.clientX;
+        dragSlider(slider, event);
+    };
 }
