@@ -1,0 +1,379 @@
+
+/*=====================================================
+ * Reset
+ *=====================================================*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+h1, h2, h3, p, span, li, a, button {
+    font-family: 'Roboto', sans-serif;
+}
+
+/*=====================================================
+ * Settings
+ *=====================================================*/
+
+ :root {
+    --nav-width: 300px;
+    --header-height: 9em;
+    --menu-item-v-padding: 1.35em;
+    
+    --default-font-size: 0.98em;
+
+    --main-color: rgb(71, 148, 198);
+    --important: rgb(207, 47, 82);
+
+    --dark-grey: #c0c0c0;
+    --grey: rgb(233, 238, 242);
+    --light-grey: rgb(241, 243, 245);
+}
+
+/*=====================================================
+ * Base
+ *=====================================================*/
+
+h1 {
+    font-size: 2.2em;
+}
+
+a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/*=====================================================
+ * General
+ *=====================================================*/
+
+body {
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+/*=====================================================
+ * Mobile Header
+ *=====================================================*/
+
+
+
+/*=====================================================
+ * Main Navigation
+ *=====================================================*/
+
+.nav {
+    width: var(--nav-width);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+    background-color: white; 
+    box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nav__header {
+    height: var(--header-height);
+}
+
+.nav__logo {
+    width: auto;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.nav__icon {
+    width: var(--default-font-size);
+    color: black;
+}
+
+.nav__item {
+    border-top: 1px solid var(--light-grey);
+}
+
+.nav__link {
+    display: flex;
+    padding: var(--menu-item-v-padding) 2em;
+    transition: background-color 0.2s;
+}
+
+.nav__link:hover {
+    text-decoration: none;
+    background-color: var(--grey);
+}
+
+.nav__label,
+.nav__indicator,
+.nav__label:hover,
+.nav__indicator:hover {
+    color: black;
+}
+
+.nav__label {
+    margin-left: 20px;
+    flex-grow: 1;
+}
+
+.nav__label,
+.nav__indicator {
+    font-size: var(--default-font-size);
+    font-weight: 500;
+}
+
+.nav__indicator::after {
+    content: "";
+    display: inline-block;
+    min-width: 7px;
+    min-height: 7px;
+    position: relative;
+    left: 8px;
+    bottom: 2px;
+    border-radius: 50%;
+}
+
+.nav__indicator.-none {
+    color: #ccc;
+}
+
+.nav__indicator.-new {
+    color: var(--important);
+}
+
+.nav__indicator.-new::after {
+    background-color: var(--important);
+}
+
+@media screen and (max-width: 1080px) {
+    .nav {
+        display: none;
+    }
+}
+
+/*=====================================================
+ * Content
+ *=====================================================*/
+
+.content {
+    width: calc(100% - var(--nav-width));
+    height: 100vh;
+    margin-left: var(--nav-width);
+    background-color: var(--grey);
+}
+
+@media screen and (max-width: 1080px) {
+    .content {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/*=====================================================
+ * Cases Header
+ *=====================================================*/
+
+.cases-header {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8em;
+    background-color: white;
+}
+
+.cases-header__icon {
+    width: 25px;
+}
+
+.cases-header__title {
+    
+}
+
+.cases-header__my-cases {
+
+}
+
+@media screen and (max-width: 1080px) {
+    .cases-header {
+        height: 6em;
+        padding: 0 3em;
+    }
+}
+
+/*=====================================================
+ * Stepper
+ *=====================================================*/
+
+.stepper {
+    height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.stepper__nav__list {
+    width: 100%;
+    position: relative;
+    white-space: nowrap;
+    font-size: 0;
+}
+
+.stepper__nav__item {
+    display: inline-block; 
+    width: 17.64705882352941%;
+    font-size: 1rem;
+}
+
+.stepper__nav__link {
+    display: block;
+    padding: var(--menu-item-v-padding) 0;
+    text-align: center;
+    color: black;
+    font-size: var(--default-font-size);
+    border-top: 1px solid var(--light-grey);
+    border-right: 2px solid white;
+}
+
+.stepper__nav__link:hover {
+    text-decoration: none;
+}
+
+.stepper__nav__link.-disable,
+.stepper__nav__link.-disable:hover {
+    cursor: default;
+    color: var(--dark-grey);
+    background-color: var(--grey);
+}
+
+.stepper__nav__link.-actif,
+.stepper__nav__link.-actif:hover {
+    color: black;
+    background-color: white;
+    cursor: default;
+}
+
+.stepper__nav__link.-new {
+    color: white;
+    background-color: var(--main-color);
+}
+
+/*=====================================================
+ * Stepper Slider
+ *=====================================================*/
+
+.stepper__slider {
+    position: relative;
+}
+
+.stepper__slider__preview-previous,
+.stepper__slider__preview-next {
+    width: 11.76470588235294%;
+    position: absolute;
+    z-index: 2;
+    padding: var(--menu-item-v-padding) 0;
+    font-size:  var(--default-font-size);
+    color: transparent;
+}
+
+.stepper__slider__preview-next {
+    right: 0;
+}
+
+.stepper__slider__content {
+    transform: translateX(0%);
+}
+
+/*=====================================================
+ * Modules
+ *=====================================================*/
+
+.module {
+    width: 100%;
+    border-top: 1px solid var(--grey);
+}
+
+.module__header {
+    background-color: white;
+}
+
+.module__title {
+    padding: 1.35em 0;
+    text-align: center;
+}
+
+.module__body {
+    border-top: 1px solid var(--grey);
+}
+
+/*=====================================================
+ * Action button
+ *=====================================================*/
+
+.quick-actions__btn {
+    width: 4em;
+    height: 4em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 4em;
+    margin-bottom: 4em;
+    padding: 1.2em;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    background-color: var(--important);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/*=====================================================
+ * Utilities
+ *=====================================================*/
+
+.-hidden {
+    display: none !important;
+}

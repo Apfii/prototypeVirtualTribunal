@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="lib/fa-solid.min.css">
+    <link rel="stylesheet" href="lib/fontawesome.min.css">
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <header class="mobile-header -hidden">
+        <div class="mobile-header__burger"></div>
+        <img class="mobile-header__logo" src="" alt=""/>
+        <div class="mobile-header__profile"></div>        
+    </header>
+    <aside class="nav">
+        <header class="nav__header">
+            <img class="nav__logo" src="img/logo.png" alt="Cyberjustice"/>
+        </header>
+        <ul class="nav__list">
+            <li class="nav__item">
+                <a class="nav__link" href="#">
+                    <i class="nav__icon fas fa-folder"></i>
+                    <span class="nav__label">My cases</span>
+                    <div class="nav__indicator">3</div>
+                </a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link" href="#">
+                    <i class="nav__icon fas fa-bell"></i>
+                    <span class="nav__label">Notifications</span>
+                    <div class="nav__indicator -new">34</div>
+                </a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link" href="#">
+                        <i class="nav__icon fas fa-file"></i>
+                    <span class="nav__label">Claims</span>
+                    <div class="nav__indicator -none">0</div>
+                </a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link" href="#">
+                        <i class="nav__icon fas fa-comment-alt"></i>
+                    <span class="nav__label">Chat</span>
+                    <div class="nav__indicator -new">2</div>
+                </a>
+            </li>
+            <li class="nav__item">
+                <a class="nav__link" href="#">
+                    <i class="nav__icon far fa-calendar"></i>
+                    <span class="nav__label">Events</span>
+                    <div class="nav__indicator">5</div>
+                </a>
+            </li>
+        </ul>
+        <a class="nav__language-switcher">
+
+        </a>
+        <footer class="nav__footer">
+            <p class="nav__copyrights"></p>
+            <p class="nav__company"></p>
+        </footer>
+    </aside>
+    
+    <main class="content">
+        <section class="cases-header">
+            <img class="cases-header__icon" src="img/folder.svg" alt="Case Icon"/>
+            <h1 class="cases-header__title">2018-00014</h1>
+            <span class="cases-header__case-indicator -hidden">3</span>
+            <a class="cases-header__my-cases" href="#">My cases</a>        
+        </section>
+        <section class="stepper">
+            <nav class="stepper__nav">
+                <div class="stepper__slider__preview-previous">&lt;</div>
+                <div class="stepper__slider__preview-next">&gt;</div>
+                <div id="test-slider-1" class="stepper__slider">
+                    <ul class="stepper__nav__list">
+                        <li class="stepper__nav__item">
+                            <a class="stepper__nav__link -actif" href="#">Identification</a>
+                        </li>
+                        <li class="stepper__nav__item">
+                            <a class="stepper__nav__link -new" href="#">Problème</a>
+                        </li>
+                        <li class="stepper__nav__item">
+                            <a class="stepper__nav__link" href="#">Documents</a>
+                        </li>
+                        <li class="stepper__nav__item">
+                            <a class="stepper__nav__link -disable" href="#">Problème</a>
+                        </li>
+                        <li class="stepper__nav__item">
+                            <a class="stepper__nav__link -disable" href="#">Bidon</a>
+                        </li>
+                        <li class="stepper__nav__item">
+                            <a class="stepper__nav__link -disable" href="#">Bidon</a>
+                        </li>
+                        <li class="stepper__nav__item">
+                            <a class="stepper__nav__link -disable" href="#">Bidon</a>
+                        </li>
+                        <li class="stepper__nav__item">
+                            <a class="stepper__nav__link -disable" href="#">Bidon</a>
+                        </li>
+                    </ul>  
+                </div>
+            </nav>
+            <div class="stepper__content">
+                <div class="module">
+                    <div class="module__header">
+                        <h1 class="module__title">Parties identifications</h1>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="quick-actions">
+        <button class="quick-actions__btn">
+                <svg aria-hidden="true" data-prefix="fal" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-plus fa-w-14 fa-9x">
+                    <path fill="currentColor" d="M436 238H242V44c0-6.6-5.4-12-12-12h-12c-6.6 0-12 5.4-12 12v194H12c-6.6 0-12 5.4-12 12v12c0 6.6 5.4 12 12 12h194v194c0 6.6 5.4 12 12 12h12c6.6 0 12-5.4 12-12V274h194c6.6 0 12-5.4 12-12v-12c0-6.6-5.4-12-12-12z" class=""></path>
+                </svg>
+        </button>
+    </div>
+</body>
+</html>
