@@ -15,6 +15,12 @@
     width: 25px;
 }
 
+.cases-header__case-indicator{
+    background-color: $gray;
+    height:2em;
+    width:2em;
+    border-radius:50%;
+}
 @media screen and (max-width: $to-medium) {
     .cases-header {
         height: 6em;
