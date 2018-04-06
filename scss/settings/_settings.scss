@@ -7,11 +7,10 @@
 
 $roboto: "Roboto", sans-serif;
 // Base
-$font-size: 18px;
+$font-size: 16px;
 $line-height: 1.7;
 $font-family: $roboto;
-$color: #666666;
-$color-dark: #333333;
+$color: #151515;
 // Headings
 $heading1: 46px; // .alpha
 $heading2: 36px; // .beta
@@ -58,16 +57,8 @@ $radius: 4px;
 $max-width: 1560px;
 
 // Header
-$header-height: 250px; /** px ou em? **/
-
-// Main Navigation
-$nav-main-width: 300px;
-
+$header-height: 155px; /** px ou em? **/
 $padding: $unit;
-
-// Icons 
-$icon: 1.2em;
-$icon-big: 2.5em;
 
 // Screen widths
 // ==========================================================================
