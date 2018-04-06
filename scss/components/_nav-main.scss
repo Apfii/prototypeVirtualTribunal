@@ -3,7 +3,7 @@
 // =====================================================
 
 .nav-main {
-    width: $nav-main-width;
+    width: rem(330px);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -24,76 +24,60 @@
     margin: 0 auto;
 }
 
-.nav-main__icon {
-    font-size: $icon;
-    color: black;
-}
-
+// Items
+// ============================================
+ 
 .nav-main__item {
-    border-top: 1px solid var(--light-grey);
-}
-
-.nav-main__list {
-   display: flex;
-   flex-direction: column;
-}
-
-.nav-main__item {
-    height: 5em;
-    display: table-cell;
-    vertical-align: middle;
+    width: 100%;
+    display: block;
+    border-top: 1px solid $light-grey;
 }
 
 .nav-main__link {
-    display: flex;
-    padding: var(--menu-item-v-padding) 2em;
+    width: 100%;
+    display: block;
+    color: $black;
+    font-weight: $medium;
+    padding: rem(20px) rem(35px);
     transition: background-color 0.2s;
+
+    &:hover {
+        color: $black;
+        text-decoration: none;
+        background-color: $gray;
+    }
+
+    @include clearfix();
 }
 
-.nav-main__link:hover {
-    text-decoration: none;
-    background-color: var(--grey);
+.nav-main__icon {
+    margin-right: 15px;
 }
 
-.nav-main__label,
-.nav-main__indicator,
-.nav-main__label:hover,
-.nav-main__indicator:hover {
-    color: black;
-}
-
-.nav-main__label {
-    margin-left: 20px;
-    flex-grow: 1;
-}
-
-.nav-main__label,
 .nav-main__indicator {
-    font-size: var(--default-font-size);
-    font-weight: 500;
-}
+    float: right;
 
-.nav-main__indicator::after {
-    content: "";
-    display: inline-block;
-    min-width: 7px;
-    min-height: 7px;
-    position: relative;
-    left: 8px;
-    bottom: 2px;
-    border-radius: 50%;
-}
+    &.-none {
+        color: $dark-gray;
+    }
 
-.nav-main__indicator.-none {
-    color: #ccc;
-}
+    &.-new {
+        color: $important;
+        &::after {
+            background-color: $important;
+        }
+    }
 
-.nav-main__indicator.-new {
-    color: var(--important);
-}
-
-.nav-main__indicator.-new::after {
-    background-color: var(--important);
+    &::after {
+        content: "";
+        display: inline-block;
+        min-width: 7px;
+        min-height: 7px;
+        position: relative;
+        left: 8px;
+        bottom: 2px;
+        border-radius: 50%;
+    }
 }
 
 @media screen and (max-width: 1080px) {
