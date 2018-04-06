@@ -51,10 +51,23 @@ $gutter: 20px;
 $margin: 40px;
 $radius: 4px;
 
-// Container
+// Dimensions
 // ==========================================================================
+
+// Container
 $max-width: 1560px;
+
+// Header
+$header-height: 250px; /** px ou em? **/
+
+// Main Navigation
+$nav-main-width: 300px;
+
 $padding: $unit;
+
+// Icons 
+$icon: 1.2em;
+$icon-big: 2.5em;
 
 // Screen widths
 // ==========================================================================
