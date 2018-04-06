@@ -1,0 +1,40 @@
+// ==========================================================================
+// Trumps
+// ==========================================================================
+.u-left {
+  float: left !important;
+}
+
+.u-right {
+  float: right !important;
+}
+
+.u-align-left {
+  text-align: left !important;
+}
+
+.u-align-right {
+  text-align: right !important;
+}
+
+.u-align-center {
+  text-align: center !important;
+}
+
+.u-color {
+  color: $color;
+}
+
+// States
+// ==========================================================================
+.is-visible {
+  visibility: visible !important;
+
+  opacity: 1 !important;
+}
+
+.is-hidden {
+  visibility: hidden !important;
+
+  opacity: 0 !important;
+}

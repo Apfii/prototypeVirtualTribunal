@@ -1,0 +1,34 @@
+/*=====================================================
+ * mobile Header
+ *=====================================================*/
+.mobile-header{
+    display:none;
+}
+.mobile-header__burger{
+    width: 4em;
+    height: 4em;
+    position: absolute;
+    top:1em;
+    left:1em;
+    border:none;
+    border-radius:50%;
+    background-color: var(--main-color);
+    color:white;
+}
+
+.mobile-header__profile{
+    width: 4em;
+    height: 4em;
+    position: absolute;
+    top:1em;
+    right:1em;
+    border:none;
+    border-radius:50%;
+    background-color: var(--main-color);
+    color:white;
+}
+@media screen and (max-width: 1080px) {
+    .mobile-header {
+        display: block;
+    }
+}

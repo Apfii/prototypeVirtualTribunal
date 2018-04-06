@@ -1,0 +1,284 @@
+// ==========================================================================
+// Animations
+// ==========================================================================
+.is-animated {
+  animation-duration: $speed-slower;
+  animation-fill-mode: both;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translate3d(-100%, 0, 0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.u-slideInLeft {
+  animation-name: slideInLeft;
+}
+
+@keyframes slideInLeftSmall {
+  from {
+    transform: translate3d(-25%, 0, 0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.u-slideInLeftSmall {
+  animation-name: slideInLeftSmall;
+}
+
+@keyframes slideInLeftUp {
+  from {
+    transform: translate3d(-400%, 400%, 0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.u-slideInLeftUp {
+  animation-name: slideInLeftUp;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.u-slideInRight {
+  animation-name: slideInRight;
+}
+
+@keyframes slideInRightSmall {
+  from {
+    transform: translate3d(25%, 0, 0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.u-slideInRightSmall {
+  animation-name: slideInRightSmall;
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translate3d(0, 100%, 0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.u-slideInUp {
+  animation-name: slideInUp;
+}
+
+@keyframes slideInUpSmall {
+  from {
+    transform: translate3d(0, 50%, 0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.u-slideInUpSmall {
+  animation-name: slideInUpSmall;
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.u-slideInDown {
+  animation-name: slideInDown;
+}
+
+@keyframes slideInDownSmall {
+  from {
+    transform: translate3d(0, -40%, 0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.u-slideInDownSmall {
+  animation-name: slideInDownSmall;
+}
+
+@keyframes slideInRightDown {
+  from {
+    transform: translate3d(75%, -75%, 0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.u-slideInRightDown {
+  animation-name: slideInRightDown;
+}
+
+@keyframes fadeInUpSmall {
+  from {
+    transform: translate3d(0, 50%, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+.u-fadeInUpSmall {
+  animation-name: fadeInUpSmall;
+}
+
+@keyframes bounceIn {
+  from,
+  20%,
+  40%,
+  60%,
+  80%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(0.9, 0.9, 0.9);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.u-bounceIn {
+  animation-name: bounceIn;
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.u-zoomIn {
+  animation-name: zoomIn;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.u-fadeIn {
+  animation-name: fadeIn;
+}

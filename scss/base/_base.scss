@@ -1,0 +1,212 @@
+// ==========================================================================
+// Base
+// ==========================================================================
+html {
+  font-family: $font-family;
+  line-height: $line-height;
+  background-color: $gray;
+  color: $color;
+
+  @media (max-width: $to-small) {
+    font-size: 12px;
+  }
+
+  @media (min-width: $from-small) and (max-width: $to-medium) {
+    font-size: 13px;
+  }
+
+  @media (min-width: $from-medium) and (max-width: $to-huge) {
+    font-size: 14px;
+  }
+
+  @media (min-width: $from-huge) {
+    font-size: $font-size;
+  }
+}
+
+body {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+::selection {
+  background: $selection;
+  text-shadow: none;
+  color: $white;
+}
+
+main {
+
+}
+
+img,
+svg {
+  max-width: 100%;
+}
+
+a {
+  color: $link;
+  text-decoration: none;
+
+  &:hover {
+    color: $link;
+    text-decoration: underline;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+.o-text {
+  margin-bottom: rem(55px);
+}
+
+.o-watch {
+  @media (max-width: $to-small) {
+    display: none;
+  }
+
+  @media (min-width: $from-small) {
+    position: absolute;
+  }
+
+  @media (min-width: $from-small) and (max-width: $to-medium) {
+    right: em(60px);
+    bottom: em(420px);
+  }
+
+  @media (min-width: $from-medium) {
+    right: em(550px);
+    bottom: em(420px);
+  }
+}
+
+.o-watch-image {
+  @media (min-width: $from-small) {
+    width: em(239px);
+    height: em(450px);
+  }
+}
+
+.o-watch-gif {
+  position: absolute;
+  top: em(92px);
+  left: em(20px);
+  width: em(195px);
+  border-radius: em(25px);
+}
+
+.o-ipad {
+  @media (max-width: $to-small) {
+    display: none;
+  }
+
+  @media (min-width: $from-small) {
+    position: absolute;
+  }
+
+  @media (min-width: $from-small) and (max-width: $to-medium) {
+    right: rem(-349px);
+    bottom: em(-260px);
+  }
+
+  @media (min-width: $from-medium) {
+    right: 0;
+    bottom: em(-260px);
+  }
+}
+
+.o-ipad-image {
+  @media (min-width: $from-small) {
+    width: em(787px);
+    height: em(612px);
+  }
+}
+
+.o-ipad-gif {
+  position: absolute;
+  top: em(28px);
+  left: em(81px);
+  height: em(534px);
+}
+
+.o-iphone {
+  position: absolute;
+
+  @media (max-width: $to-small) {
+    bottom: em(-112px);
+    right: -15%;
+  }
+
+  @media (min-width: $from-small) and (max-width: $to-medium) {
+    right: em(360px);
+    bottom: em(-112px);
+  }
+
+  @media (min-width: $from-medium) {
+    bottom: em(-112px);
+    right: em(870px);
+  }
+}
+
+.o-iphone-image {
+  width: em(397px);
+  height: em(812px);
+}
+
+.o-iphone-gif {
+  position: absolute;
+  width: em(349px);
+  top: em(89px);
+  left: em(27px);
+}
+
+.o-overlay {
+  @media (max-width: $to-small) {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $black;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 700;
+    transition-property: opacity, visibility;
+    transition-duration: $speed-slow, 0s;
+    transition-delay: 0s, $speed-slow;
+
+    .has-nav-open & {
+      opacity: 0.5;
+      visibility: visible;
+      transition-delay: 0s;
+    }
+  }
+}
+
+.js-wow {
+  visibility: hidden;
+}*/

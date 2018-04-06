@@ -1,0 +1,20 @@
+/*=====================================================
+ * Action button
+ *=====================================================*/
+
+ .quick-actions__btn {
+    width: 4em;
+    height: 4em;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-right: 4em;
+    margin-bottom: 4em;
+    padding: 1.2em;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    background-color: var(--important);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,20 @@
+0/*========================================================
+ * Stepper - Navigation
+ *========================================================*/
+
+.stepper .nav-link {
+  color: white !important;
+}
+
+.stepper .nav-link:hover,
+.stepper .nav-link.active {
+  cursor: pointer;
+  background-color: #166983;
+}
+
+.stepper .nav-link.disabled,
+.stepper .nav-link.disabled:hover {
+  background-color: desaturate(#1d85a5, 40);
+  color: lighten(#1d85a5, 50) !important;
+  cursor: default;
+}

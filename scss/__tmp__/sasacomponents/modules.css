@@ -1,0 +1,22 @@
+/*=====================================================
+ * Modules
+ *=====================================================*/
+
+ .module {
+    width: 100%;
+    border-top: 1px solid var(--grey);
+}
+
+.module__header {
+    background-color: white;
+}
+
+.module__title {
+    padding: 1.35em 0;
+    text-align: center;
+}
+
+.module__body {
+    border-top: 1px solid var(--grey);
+}
+

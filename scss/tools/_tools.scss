@@ -1,0 +1,64 @@
+// ==========================================================================
+// Tools
+// ==========================================================================
+
+// Functions
+// ==========================================================================
+@function em($px, $base: $font-size) {
+  @return ($px / $base) * 1em;
+}
+
+@function rem($px, $base: $font-size) {
+  @return ($px / $base) * 1rem;
+}
+
+@function span($fraction) {
+  @return $fraction * 100%;
+}
+
+// Mixins
+// ==========================================================================
+
+// Micro clearfix, as per {@link css-101.org/articles/clearfix/latest-new-clearfix-so-far.php CSS Mojo}
+//
+// @see inuitcss/generic.clearfix
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin vertical-center {
+  font-size: 0;
+
+  &:before {
+    display: inline-block;
+    height: 100%;
+    content: "";
+    vertical-align: middle;
+  }
+
+  > * {
+    font-size: 1rem;
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .ie9 & {
+    @include vertical-center;
+  }
+}
+
+@mixin list-reset {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

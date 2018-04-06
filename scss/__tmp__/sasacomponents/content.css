@@ -1,0 +1,17 @@
+/*=====================================================
+ * Content
+ *=====================================================*/
+
+ .content {
+    width: calc(100% - var(--nav-width));
+    height: 100vh;
+    margin-left: var(--nav-width);
+    background-color: var(--grey);
+}
+
+@media screen and (max-width: 1080px) {
+    .content {
+        width: 100%;
+        margin-left: 0;
+    }
+}
