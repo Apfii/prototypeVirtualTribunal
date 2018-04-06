@@ -3,6 +3,7 @@
 // =====================================================
 .profile-btn{
     position: absolute;
+    z-index:2;
     top:$o-button-margin;
     right:$o-button-margin;
     background-color: $main-color;
