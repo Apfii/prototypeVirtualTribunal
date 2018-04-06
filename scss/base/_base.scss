@@ -1,6 +1,7 @@
 // ==========================================================================
 // Base
 // ==========================================================================
+
 html {
   font-family: $font-family;
   line-height: $line-height;
@@ -36,7 +37,15 @@ body {
 }
 
 main {
+  width: 100%;
+  height: 100vh;
+}
 
+@media screen and (min-width: $from-medium) {
+  main {
+    width: calc(100% - #{rem($nav-main-width)});
+    margin-left: rem($nav-main-width);
+  }
 }
 
 a {
