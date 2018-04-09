@@ -55,7 +55,8 @@ $radius: 4px;
 
 // Container
 $max-width: 1560px;
-$nav-main-width :350px;
+$nav-main-width :330px;
+
 // Header
 $header-height: 155px; /** px ou em? **/
 $padding: $unit;
@@ -63,8 +64,10 @@ $padding: $unit;
 //o-button
 $o-button-margin:2em;
 $o-button-size:4em;
+
 //mobile header
 $mobile-header-height: $o-button-size + 2*$o-button-margin;
+
 // Icons 
 $icon: 1.2em;
 $icon-big: 2.5em;
@@ -75,9 +78,9 @@ $from-tiny: 500px;
 $to-tiny: $from-tiny - 1;
 $from-small: 700px;
 $to-small: $from-small - 1;
-$from-medium: 1000px;
+$from-medium: 1100px;
 $to-medium: $from-medium - 1;
-$from-large: 1200px;
+$from-large: 1300px;
 $to-large: $from-large - 1;
 $from-huge: 1600px;
 $to-huge: $from-huge - 1;

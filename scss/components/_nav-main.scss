@@ -3,7 +3,7 @@
 // =====================================================
 
 .nav-main {
-    width: rem(330px);
+    width: rem($nav-main-width);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -40,13 +40,11 @@
     font-weight: $medium;
     padding: rem(20px) rem(35px);
     transition: background-color 0.2s;
-
     &:hover {
         color: $black;
         text-decoration: none;
         background-color: $gray;
     }
-
     @include clearfix();
 }
 
@@ -56,18 +54,15 @@
 
 .nav-main__indicator {
     float: right;
-
     &.-none {
         color: $dark-gray;
     }
-
     &.-new {
         color: $important;
         &::after {
             background-color: $important;
         }
     }
-
     &::after {
         content: "";
         display: inline-block;
@@ -80,8 +75,11 @@
     }
 }
 
-@media screen and (max-width: 1080px) {
-    .nav {
+// Medias
+// ============================================
+
+@media screen and (max-width: $to-medium) {
+    .nav-main {
         display: none;
     }
 }

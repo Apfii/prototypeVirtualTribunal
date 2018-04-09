@@ -1,14 +1,41 @@
 // =====================================================
 // Quick Actions
 // =====================================================
-
- .quick-actions__btn {
+.quick-actions{
     position: absolute;
     bottom: $o-button-margin;
     right: $o-button-margin;
+    z-index: 20;
+}
+
+.quick-actions__expand-btn {
+    float: right;
     padding: 1.2em;
     color: $white;
     cursor: pointer;
     background-color: $important;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.5s;
+}
+.quick-actions__expand-btn.-tilted {
+    transform: rotate(45deg);
+}
+.quick-actions__container{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.quick-actions__action {
+    padding-bottom: $o-button-margin;
+    cursor: pointer;
+}
+.quick-actions__action-label {
+    color:$white;
+    font-weight: $medium;
+    margin-right:1em;
+    cursor: inherit;
+}
+.quick-actions__action-btn {
+    padding: 1.2em;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }

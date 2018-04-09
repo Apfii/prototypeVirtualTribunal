@@ -52,3 +52,21 @@ var translateSlider = function(slider) {
         } else clearInterval(interval);
     }, 10)
 }
+// ==========================================================================
+// Overlay
+// ==========================================================================
+window.onload = function() {
+    document.getElementById("js-expand-actions-btn").onclick = function(){
+        toggleClassOnElement("-tilted",document.getElementById("js-expand-actions-btn"));
+        toggleClassOnElement("is-hidden",document.getElementById("js-overlay"));
+        toggleClassOnElement("is-hidden",document.getElementById("js-action-btns-container"));
+    };
+};
+
+function toggleClassOnElement(cssClass, element){
+    var hideClass = cssClass;
+
+    element.classList.contains(hideClass)?
+    element.classList.remove(hideClass):
+    element.classList.add(hideClass);
+}
