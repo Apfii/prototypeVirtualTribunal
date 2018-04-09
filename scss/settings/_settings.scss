@@ -32,7 +32,7 @@ $bold: 700;
 $black: #000000;
 $white: #ffffff;
 $gray: rgb(233, 238, 242);
-$light-grey: rgb(241, 243, 245);
+$light-gray: rgb(241, 243, 245);
 $dark-gray: #c0c0c0;
 // Main
 $main-color: rgb(71, 148, 198);
@@ -55,17 +55,20 @@ $radius: 4px;
 
 // Container
 $max-width: 1560px;
-$nav-main-width :330px;
+$aside-width: 330px;
 
 // Header
 $header-height: 155px; /** px ou em? **/
 $padding: $unit;
 
-//o-button
+// 
+$link-v-pad: 20px;
+
+// o-button
 $o-button-margin:2em;
 $o-button-size:4em;
 
-//mobile header
+// Mobile header
 $mobile-header-height: $o-button-size + 2*$o-button-margin;
 
 // Icons 

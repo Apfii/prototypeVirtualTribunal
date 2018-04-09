@@ -1,45 +1,75 @@
+window.onload = function() {
+    setupSlider1();
+    setupSlider2();
+};
 
-// Default values
-var SLIDER_SIZE = 5;
-var TOTAL_ITEMS = 8;
-var INDEX = 0;
+// Slider 1
+// ======================================================================
 
-//
-var item_width = null;
-var interval = null;
+function setupSlider1() {
 
-// Slider
-var slider1 = {
-    e: null,
-    x: 0,
-    isHovered: false,
-    isScrollForward: null
+    // Default values
+    var SLIDER_SIZE = 5;
+    var TOTAL_ITEMS = 8;
+    var INDEX = 0;
+
+    // Slider
+    var slider = {
+        e: null,
+        x: 0,
+        isHovered: false,
+        isScrollForward: null
+    };
+
+    // Get element
+    slider.e = document.getElementById("test-slider-1");
+    var item_width = slider.e.children[0].children[0].offsetWidth;
+
+    // Get triggers
+    var prev = slider.e.parentElement.children[0];
+    var next = slider.e.parentElement.children[1];
+
+    // Define translation function
+    var interval;
+    var translateSlider = function(slider) {
+        interval = setInterval(function(){
+            if(slider.isHovered) {
+                slider.x += slider.isScrollForward ? 5 : -5;
+                if(slider.x < 0) slider.x = 0;
+                else if(slider.x > item_width*(TOTAL_ITEMS-SLIDER_SIZE)-item_width*0.33) slider.x = item_width*(TOTAL_ITEMS-SLIDER_SIZE)-item_width*0.33;
+                slider.e.style = "transform: translateX(-"+slider.x+"px)";
+            } else clearInterval(interval);
+        }, 10)
+    }
+    
+    // Attach events
+    prev.onmouseenter = function() {
+        slider.isHovered = true;
+        slider.isScrollForward = false;
+        translateSlider(slider);
+    };
+    next.onmouseenter = function() {
+        slider.isHovered = true;
+        slider.isScrollForward = true;
+        translateSlider(slider);
+    };
+    next.onmouseleave = prev.onmouseleave = function() {
+        slider.isHovered = false;
+    };
 }
 
-console.log(slider1)
+// Slider 2
+// ======================================================================
 
-window.onload = function() {
-    slider1.e = document.getElementById("test-slider-1");
+function setupSlider2() {
 
-    item_width = slider1.e.children[0].children[0].offsetWidth;
-
-    var prev1 = slider1.e.parentElement.children[0];
-    var next1 = slider1.e.parentElement.children[1];
-    
-    prev1.onmouseenter = function() {
-        slider1.isHovered = true;
-        slider1.isScrollForward = false;
-        translateSlider(slider1);
+    // Slider
+    var slider = {
+        e: null,
+        x: 0,
+        isDragging: false,
+        mouseStartDragX: null
     };
-    next1.onmouseenter = function() {
-        slider1.isHovered = true;
-        slider1.isScrollForward = true;
-        translateSlider(slider1);
-    };
-    next1.onmouseleave = prev1.onmouseleave = function() {
-        slider1.isHovered = false;
-    };
-};
 
 
 var translateSlider = function(slider) {
@@ -52,6 +82,32 @@ var translateSlider = function(slider) {
         } else clearInterval(interval);
     }, 10)
 }
+
+
+    // Get element
+    slider.e = document.getElementById("test-slider-2");
+
+    // Define translation function
+    var interval;
+    var dragSlider = function(slider, event) {
+        interval = setInterval(function(){
+            if(slider.isDragging) {
+                var offsetX = slider.mouseStartDragX - event.clientX;
+                slider.e.style = "transform: translateX(-"+offsetX+"px)";
+            } else {
+                clearInterval(interval);
+            } 
+        }, 50)
+    }
+    
+    // Attach events
+    slider.e.ondrag = function(event) {
+        slider.isDragging = true;
+        slider.mouseStartDragX = event.clientX;
+        dragSlider(slider, event);
+    };
+}
+
 // ==========================================================================
 // Overlay
 // ==========================================================================
@@ -70,3 +126,4 @@ function toggleClassOnElement(cssClass, element){
     element.classList.remove(hideClass):
     element.classList.add(hideClass);
 }
+
