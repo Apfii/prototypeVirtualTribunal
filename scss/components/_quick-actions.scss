@@ -10,32 +10,73 @@
 
 .quick-actions__expand-btn {
     float: right;
-    padding: 1.2em;
     color: $white;
     cursor: pointer;
     background-color: $important;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     transition: transform 0.5s;
+    padding: 12px;
 }
 .quick-actions__expand-btn.-tilted {
     transform: rotate(45deg);
 }
 .quick-actions__container{
-    display:flex;
-    flex-direction: column;
-    align-items: flex-end;
+    display:block;
+    position:relative;
+
+    height: 160px;
+    width:50px;
+    margin-bottom:25px;
 }
+
+$transtion-time: 0.5s;
 .quick-actions__action {
-    padding-bottom: $o-button-margin;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    margin:10px 0;
     cursor: pointer;
+    bottom:0;
+    height:50px;
+    width:100%;
+    transition:
+        visibility $transtion-time;
+    > button {
+        transition:
+            height $transtion-time, 
+            font-size $transtion-time, 
+            width $transtion-time,
+            padding $transtion-time
+    }
+    > label {
+        transition:
+            font-size $transtion-time
+    }
 }
+
+.quick-actions__action.-hidden {
+    visibility: hidden;
+    > button {
+        font-size:0;
+        height:0;
+        width:0;
+        padding:0;
+    }
+    > label {
+        font-size:0;
+    }
+}
+
 .quick-actions__action-label {
+    position:absolute;
+    right:calc(100% + 10px);
     color:$white;
     font-weight: $medium;
-    margin-right:1em;
     cursor: inherit;
+    white-space: nowrap;
 }
 .quick-actions__action-btn {
-    padding: 1.2em;
+    display:inline-block;
+    margin:auto;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }

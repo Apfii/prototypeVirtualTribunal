@@ -741,8 +741,8 @@ a {
   visibility: hidden;
 }*/
 .o-button {
-  width: 4em;
-  height: 4em;
+  width: 50px;
+  height: 50px;
   border: none;
   border-radius: 50%;
   color: #000000;
@@ -759,8 +759,11 @@ a {
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 10;
-  cursor: pointer;
-  transition: opacity 0.5s; }
+  transition: opacity 0.5s, visibility 0.5s; }
+
+.o-overlay.-hidden {
+  visibility: hidden;
+  opacity: 0; }
 
 .cases-header {
   height: 155px;
@@ -795,8 +798,8 @@ a {
 
 .mobile-header__burger {
   position: absolute;
-  top: 2em;
-  left: 2em;
+  top: 25px;
+  left: 25px;
   background-color: #4794c6;
   color: #ffffff; }
 
@@ -812,7 +815,7 @@ a {
   background-color: #cf2f52; }
 
 .mobile-header__logo {
-  height: 8em;
+  height: 100px;
   margin: 0 auto;
   display: block;
   padding: 1em 0; }
@@ -821,7 +824,7 @@ a {
   .mobile-header {
     position: relative;
     display: block;
-    height: 8em;
+    height: 100px;
     background-color: #ffffff;
     z-index: 1;
     box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.2); } }
@@ -897,46 +900,72 @@ a {
 .profile-btn {
   position: absolute;
   z-index: 2;
-  top: 2em;
-  right: 2em;
+  top: 25px;
+  right: 25px;
   background-color: #4794c6;
   color: #ffffff; }
 
 .quick-actions {
   position: absolute;
-  bottom: 2em;
-  right: 2em;
+  bottom: 25px;
+  right: 25px;
   z-index: 20; }
 
 .quick-actions__expand-btn {
   float: right;
-  padding: 1.2em;
   color: #ffffff;
   cursor: pointer;
   background-color: #cf2f52;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  transition: transform 0.5s; }
+  transition: transform 0.5s;
+  padding: 12px; }
 
 .quick-actions__expand-btn.-tilted {
   transform: rotate(45deg); }
 
 .quick-actions__container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end; }
+  display: block;
+  position: relative;
+  height: 160px;
+  width: 50px;
+  margin-bottom: 25px; }
 
 .quick-actions__action {
-  padding-bottom: 2em;
-  cursor: pointer; }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  cursor: pointer;
+  bottom: 0;
+  height: 50px;
+  width: 100%;
+  transition: visibility 0.5s; }
+  .quick-actions__action > button {
+    transition: height 0.5s, font-size 0.5s, width 0.5s, padding 0.5s; }
+  .quick-actions__action > label {
+    transition: font-size 0.5s; }
+
+.quick-actions__action.-hidden {
+  visibility: hidden; }
+  .quick-actions__action.-hidden > button {
+    font-size: 0;
+    height: 0;
+    width: 0;
+    padding: 0; }
+  .quick-actions__action.-hidden > label {
+    font-size: 0; }
 
 .quick-actions__action-label {
+  position: absolute;
+  right: calc(100% + 10px);
   color: #ffffff;
   font-weight: 500;
-  margin-right: 1em;
-  cursor: inherit; }
+  cursor: inherit;
+  white-space: nowrap; }
 
 .quick-actions__action-btn {
-  padding: 1.2em;
+  display: inline-block;
+  margin: auto;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); }
 
 .stepper {

@@ -109,21 +109,57 @@ var translateSlider = function(slider) {
 }
 
 // ==========================================================================
-// Overlay
+// Quick Action Menu
 // ==========================================================================
+var expandActionBtn;
+var overlay;
+var menuIsOpenned = false;
 window.onload = function() {
-    document.getElementById("js-expand-actions-btn").onclick = function(){
-        toggleClassOnElement("-tilted",document.getElementById("js-expand-actions-btn"));
-        toggleClassOnElement("is-hidden",document.getElementById("js-overlay"));
-        toggleClassOnElement("is-hidden",document.getElementById("js-action-btns-container"));
+    expandActionBtn = document.getElementById("js-expand-actions-btn");
+    overlay = document.getElementById("js-overlay");
+
+    expandActionBtn.onclick = overlay.onclick = function(){
+        toggleQuickActionButtons()
     };
 };
 
-function toggleClassOnElement(cssClass, element){
-    var hideClass = cssClass;
+function toggleQuickActionButtons(){
+    if(menuIsOpenned){
+        menuIsOpenned = false;
+        expandActionBtn.classList.remove("-tilted");
+        overlay.classList.add("-hidden");
 
-    element.classList.contains(hideClass)?
-    element.classList.remove(hideClass):
-    element.classList.add(hideClass);
+        var actions = Array.from(document.getElementsByClassName('quick-actions__action'));
+        for(var i=0;i<actions.length ;i++)
+        {   
+            window.setTimeout(function(action){
+                if(!menuIsOpenned){
+                    action.classList.add("-hidden");
+                }
+            },100*i,actions[i]);
+        }
+        actions[actions.length -1].addEventListener('transitionend', function(element){
+            if(!menuIsOpenned){
+                document.getElementById("js-action-btns-container").classList.add("is-hidden");
+            }
+        }.bind(null, actions[actions.length -1]), false);
+                
+    }
+    else{
+        menuIsOpenned = true;
+        expandActionBtn.classList.add("-tilted");
+        overlay.classList.remove("-hidden");
+        document.getElementById("js-action-btns-container").classList.remove("is-hidden");
+        
+        var actions = Array.from(document.getElementsByClassName('quick-actions__action')).reverse();
+        for(var i=0;i<actions.length ;i++)
+        {   
+            window.setTimeout(function(action){
+                if(menuIsOpenned){
+                    action.classList.remove("-hidden");
+                }
+            },150*i,actions[i]);
+        }
+    }
 }
 
