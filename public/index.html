@@ -12,6 +12,7 @@
     <script src="js/scripts.js"></script>
 </head>
 <body>
+    <div class="o-overlay -hidden" id="js-overlay"></div>
     <button class="o-button profile-btn"><i class="fas fa-user"></i></button>
     <header class="mobile-header">
         <button class="o-button mobile-header__burger -new"><i class="fas fa-bars"></i></button>
@@ -78,7 +79,7 @@
         <section class="cases-header">
             <img class="cases-header__icon" src="img/folder.svg" alt="Case Icon"/>
             <h1 class="cases-header__title">2018-00014</h1>
-            <span class="cases-header__case-indicator">3</span>
+            <div class="cases-header__case-indicator">3</div>
             <a class="cases-header__my-cases" href="#">My cases</a>        
         </section>
         <section class="stepper">
@@ -154,10 +155,30 @@
         </section>
     </main>
     <div class="quick-actions">
-        <button class="o-button quick-actions__btn">
-                <svg aria-hidden="true" data-prefix="fal" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-plus fa-w-14 fa-9x">
-                    <path fill="currentColor" d="M436 238H242V44c0-6.6-5.4-12-12-12h-12c-6.6 0-12 5.4-12 12v194H12c-6.6 0-12 5.4-12 12v12c0 6.6 5.4 12 12 12h194v194c0 6.6 5.4 12 12 12h12c6.6 0 12-5.4 12-12V274h194c6.6 0 12-5.4 12-12v-12c0-6.6-5.4-12-12-12z" class=""></path>
-                </svg>
+        <div class="quick-actions__container is-hidden" id="js-action-btns-container">
+            <a class="quick-actions__action -hidden">
+                <label class="quick-actions__action-label">Create event </label>
+                <button class="o-button quick-actions__action-btn">
+                    <i class="far fa-calendar"></i>
+                </button>
+            </a>
+            <a class="quick-actions__action -hidden">
+                <label class="quick-actions__action-label">Start a Chat</label>
+                <button class="o-button quick-actions__action-btn">
+                    <i class="fas fa-comment-alt"></i>
+                </button>
+            </a>
+            <a class="quick-actions__action -hidden">
+                <label class="quick-actions__action-label">New Case</label>
+                <button class="o-button quick-actions__action-btn">
+                    <i class="fas fa-folder"></i>
+                </button>
+            </a>
+        </div>
+        <button class="o-button quick-actions__expand-btn" id="js-expand-actions-btn">
+            <svg aria-hidden="true" data-prefix="fal" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-plus fa-w-14 fa-9x">
+                <path fill="currentColor" d="M436 238H242V44c0-6.6-5.4-12-12-12h-12c-6.6 0-12 5.4-12 12v194H12c-6.6 0-12 5.4-12 12v12c0 6.6 5.4 12 12 12h194v194c0 6.6 5.4 12 12 12h12c6.6 0 12-5.4 12-12V274h194c6.6 0 12-5.4 12-12v-12c0-6.6-5.4-12-12-12z" class=""></path>
+            </svg>
         </button>
     </div>
 </body>

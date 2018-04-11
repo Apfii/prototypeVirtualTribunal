@@ -159,3 +159,58 @@ function setupSlider2() {
         initSlider(slider, event);
     };*/
 }
+
+// ==========================================================================
+// Quick Action Menu
+// ==========================================================================
+var expandActionBtn;
+var overlay;
+var menuIsOpenned = false;
+window.onload = function() {
+    expandActionBtn = document.getElementById("js-expand-actions-btn");
+    overlay = document.getElementById("js-overlay");
+
+    expandActionBtn.onclick = overlay.onclick = function(){
+        toggleQuickActionButtons()
+    };
+};
+
+function toggleQuickActionButtons(){
+    if(menuIsOpenned){
+        menuIsOpenned = false;
+        expandActionBtn.classList.remove("-tilted");
+        overlay.classList.add("-hidden");
+
+        var actions = Array.from(document.getElementsByClassName('quick-actions__action'));
+        for(var i=0;i<actions.length ;i++)
+        {   
+            window.setTimeout(function(action){
+                if(!menuIsOpenned){
+                    action.classList.add("-hidden");
+                }
+            },100*i,actions[i]);
+        }
+        actions[actions.length -1].addEventListener('transitionend', function(element){
+            if(!menuIsOpenned){
+                document.getElementById("js-action-btns-container").classList.add("is-hidden");
+            }
+        }.bind(null, actions[actions.length -1]), false);
+                
+    }
+    else{
+        menuIsOpenned = true;
+        expandActionBtn.classList.add("-tilted");
+        overlay.classList.remove("-hidden");
+        document.getElementById("js-action-btns-container").classList.remove("is-hidden");
+        
+        var actions = Array.from(document.getElementsByClassName('quick-actions__action')).reverse();
+        for(var i=0;i<actions.length ;i++)
+        {   
+            window.setTimeout(function(action){
+                if(menuIsOpenned){
+                    action.classList.remove("-hidden");
+                }
+            },150*i,actions[i]);
+        }
+    }
+}
