@@ -1,15 +1,19 @@
 window.onload = function() {
     burgerMenu();
+    setupActionBtn()
     //setupSlider1();
     setupSlider2();
     document.ondrag = function() { return false; }
     document.ondragstart = function() { return false; }
 };
 
+
+
 // Burger Menu
 // ======================================================================
 
 function burgerMenu() {
+    
     var navOpened = false;
     var burger = document.getElementsByClassName("mobile-header__burger")[0];
     var mainNav = document.getElementsByClassName("nav-main")[0];
@@ -163,17 +167,18 @@ function setupSlider2() {
 // ==========================================================================
 // Quick Action Menu
 // ==========================================================================
+
 var expandActionBtn;
 var overlay;
 var menuIsOpenned = false;
-window.onload = function() {
+
+function setupActionBtn() {
     expandActionBtn = document.getElementById("js-expand-actions-btn");
     overlay = document.getElementById("js-overlay");
-
     expandActionBtn.onclick = overlay.onclick = function(){
         toggleQuickActionButtons()
     };
-};
+}
 
 function toggleQuickActionButtons(){
     if(menuIsOpenned){
