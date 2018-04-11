@@ -746,6 +746,7 @@ a {
   border: none;
   border-radius: 50%;
   color: #000000;
+  outline: none;
   background-color: #ffffff; }
 
 .o-overlay {
@@ -798,6 +799,7 @@ a {
 
 .mobile-header__burger {
   position: absolute;
+  z-index: 2;
   top: 25px;
   left: 25px;
   background-color: #4794c6;
@@ -816,17 +818,16 @@ a {
 
 .mobile-header__logo {
   height: 100px;
-  margin: 0 auto;
   display: block;
+  margin: 0 auto;
   padding: 1em 0; }
 
 @media screen and (max-width: 1099px) {
   .mobile-header {
-    position: relative;
-    display: block;
     height: 100px;
+    display: block;
+    position: relative;
     background-color: #ffffff;
-    z-index: 1;
     box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.2); } }
 
 .nav-main {
@@ -835,7 +836,9 @@ a {
   display: flex;
   flex-direction: column;
   position: absolute;
+  top: 0;
   z-index: 1;
+  transition: left 0.3s linear;
   background-color: white;
   box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.2); }
 
@@ -894,8 +897,10 @@ a {
     border-radius: 50%; }
 
 @media screen and (max-width: 1099px) {
-  .nav-main {
-    display: none; } }
+  .nav-main.-nav-closed {
+    left: -20.625rem; }
+  .nav-main.-nav-opened {
+    left: 0; } }
 
 .profile-btn {
   position: absolute;
@@ -920,13 +925,12 @@ a {
   transition: transform 0.5s;
   padding: 12px; }
 
-.quick-actions__expand-btn.-tilted {
+.quick-actions__expand-btn.-menu-opened {
   transform: rotate(45deg); }
 
 .quick-actions__container {
   display: block;
   position: relative;
-  height: 160px;
   width: 50px;
   margin-bottom: 25px; }
 
@@ -945,14 +949,14 @@ a {
   .quick-actions__action > label {
     transition: font-size 0.5s; }
 
-.quick-actions__action.-hidden {
+.quick-actions__action.-menu-closed {
   visibility: hidden; }
-  .quick-actions__action.-hidden > button {
+  .quick-actions__action.-menu-closed > button {
     font-size: 0;
     height: 0;
     width: 0;
     padding: 0; }
-  .quick-actions__action.-hidden > label {
+  .quick-actions__action.-menu-closed > label {
     font-size: 0; }
 
 .quick-actions__action-label {

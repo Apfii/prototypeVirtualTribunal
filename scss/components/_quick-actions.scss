@@ -17,14 +17,13 @@
     transition: transform 0.5s;
     padding: 12px;
 }
-.quick-actions__expand-btn.-tilted {
+.quick-actions__expand-btn.-menu-opened {
     transform: rotate(45deg);
 }
 .quick-actions__container{
     display:block;
     position:relative;
 
-    height: 160px;
     width:50px;
     margin-bottom:25px;
 }
@@ -54,7 +53,7 @@ $transtion-time: 0.5s;
     }
 }
 
-.quick-actions__action.-hidden {
+.quick-actions__action.-menu-closed {
     visibility: hidden;
     > button {
         font-size:0;

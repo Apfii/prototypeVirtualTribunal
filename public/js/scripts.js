@@ -168,54 +168,37 @@ function setupSlider2() {
 // Quick Action Menu
 // ==========================================================================
 
-var expandActionBtn;
-var overlay;
-var menuIsOpenned = false;
-
 function setupActionBtn() {
-    expandActionBtn = document.getElementById("js-expand-actions-btn");
-    overlay = document.getElementById("js-overlay");
+    var expandActionBtn = document.getElementById("js-expand-actions-btn");
+    var overlay = document.getElementById("js-overlay");
+    var menuIsOpenned = false;
+
     expandActionBtn.onclick = overlay.onclick = function(){
-        toggleQuickActionButtons()
+        menuIsOpenned = !menuIsOpenned;
+        toggleClassOnElement("-menu-opened", expandActionBtn);
+        toggleClassOnElement("-menu-closed", overlay);
+
+        var actions = Array.from(document.getElementsByClassName('quick-actions__action'));
+        if(menuIsOpenned) actions.reverse();
+        for(var i=0;i<actions.length ;i++)
+        {   
+            window.setTimeout(function(){
+                if(menuIsOpenned){
+                    this.classList.remove("-menu-closed");
+                }
+                else{
+                    this.classList.add("-menu-closed");
+                }
+            }.bind(actions[i]),100*i);
+        }   
     };
 }
 
-function toggleQuickActionButtons(){
-    if(menuIsOpenned){
-        menuIsOpenned = false;
-        expandActionBtn.classList.remove("-tilted");
-        overlay.classList.add("-hidden");
-
-        var actions = Array.from(document.getElementsByClassName('quick-actions__action'));
-        for(var i=0;i<actions.length ;i++)
-        {   
-            window.setTimeout(function(action){
-                if(!menuIsOpenned){
-                    action.classList.add("-hidden");
-                }
-            },100*i,actions[i]);
-        }
-        actions[actions.length -1].addEventListener('transitionend', function(element){
-            if(!menuIsOpenned){
-                document.getElementById("js-action-btns-container").classList.add("is-hidden");
-            }
-        }.bind(null, actions[actions.length -1]), false);
-                
-    }
-    else{
-        menuIsOpenned = true;
-        expandActionBtn.classList.add("-tilted");
-        overlay.classList.remove("-hidden");
-        document.getElementById("js-action-btns-container").classList.remove("is-hidden");
-        
-        var actions = Array.from(document.getElementsByClassName('quick-actions__action')).reverse();
-        for(var i=0;i<actions.length ;i++)
-        {   
-            window.setTimeout(function(action){
-                if(menuIsOpenned){
-                    action.classList.remove("-hidden");
-                }
-            },150*i,actions[i]);
-        }
-    }
+// ==========================================================================
+// Utilities
+// ==========================================================================
+function toggleClassOnElement(className, element){
+    element.classList.contains(className)?
+        element.classList.remove(className):
+        element.classList.add(className);
 }
