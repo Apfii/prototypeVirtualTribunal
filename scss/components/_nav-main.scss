@@ -5,10 +5,16 @@
 .nav-main {
     width: rem($aside-width);
     height: 100vh;
+
     display: flex;
     flex-direction: column;
+
     position: absolute;
+    top: 0;
     z-index: 1;
+
+    transition: left $speed $easing;
+
     background-color: white; 
     box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.2);
 }
@@ -83,7 +89,11 @@
 // ============================================
 
 @media screen and (max-width: $to-medium) {
-    .nav-main {
-        display: none;
+    .nav-main.-nav-closed {
+        left: rem(-$aside-width);
+    }
+
+    .nav-main.-nav-opened {
+        left: 0;
     }
 }

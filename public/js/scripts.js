@@ -1,7 +1,24 @@
 window.onload = function() {
-    setupSlider1();
+    burgerMenu();
+    //setupSlider1();
     setupSlider2();
+    document.ondrag = function() { return false; }
+    document.ondragstart = function() { return false; }
 };
+
+// Burger Menu
+// ======================================================================
+
+function burgerMenu() {
+    var navOpened = false;
+    var burger = document.getElementsByClassName("mobile-header__burger")[0];
+    var mainNav = document.getElementsByClassName("nav-main")[0];
+    burger.onclick = function() {
+        navOpened = !navOpened;
+        var navClassName = mainNav.className.split(" ")[0]
+        mainNav.className = navClassName + " " + (navOpened ? "-nav-opened" : "-nav-closed");
+    }
+}
 
 // Slider 1
 // ======================================================================
@@ -64,19 +81,59 @@ function setupSlider1() {
 function setupSlider2() {
 
     // Slider
-    var slider = {
-        e: null,
-        x: 0,
-        isDragging: false,
-        mouseStartDragX: null
-    };
+    var initSlider = function(id) {
+        var element = document.getElementById(id);  // Get element
+        var items = element.children[0].children;   // Get links
 
-    // Get element
-    slider.e = document.getElementById("test-slider-2");
+        // Create slider object
+        return {
+            e: element,
+            x: 0,
+            mouseStartX: null,
 
+            nbItems: items.length,
+            itemWidth: items[0].offsetWidth,
+            width: items[0].offsetWidth * items.length,
+        };
+    }
+
+    // Slider
+    var slider = initSlider("test-slider-2");
+    console.log(slider);
+
+    // 
+    // https://www.w3schools.com/howto/howto_js_draggable.asp
+    var onDragHandler = function(event) {
+        event = event || window.event;
+        this.mouseStartX = event.clientX;
+        document.onmousemove = elementDrag.bind(slider);
+        document.onmouseup = closeDragElement;
+    }
+
+    // 
+    var elementDrag = function(event) {
+        event = event || window.event;
+        // calculate the new cursor position:
+        var offsetX = this.mouseStartX - event.clientX;
+        offsetX = offsetX > this.width ? this.width : offsetX < 0 ? 0 : offsetX;
+        this.x += offsetX;
+        this.e.style = "transform: translateX(-"+this.x+"px);";
+    }
+
+    var closeDragElement = function() {
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+
+    // 
+    slider.e.onmousedown = onDragHandler.bind(slider);
+
+
+
+/*
     // Define translation function
     var interval;
-    var dragSlider = function(slider, event) {
+    var initSlider = function(slider, event) {
         interval = setInterval(function(){
             if(slider.isDragging) {
                 var offsetX = slider.mouseStartDragX - event.clientX;
@@ -84,13 +141,21 @@ function setupSlider2() {
             } else {
                 clearInterval(interval);
             } 
-        }, 50)
+        }, 500)
     }
     
     // Attach events
-    slider.e.ondrag = function(event) {
+    slider.e.ondragstart = function() {
         slider.isDragging = true;
         slider.mouseStartDragX = event.clientX;
-        dragSlider(slider, event);
-    };
+    }
+
+    slider.e.ondragend = function() {
+        slider.isDragging = false;
+        slider.mouseStartDragX = null;
+    }
+
+    slider.e.onmousedown = function(event) {
+        initSlider(slider, event);
+    };*/
 }

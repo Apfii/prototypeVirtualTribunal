@@ -1,16 +1,20 @@
 // =====================================================
 // Mobile Header
 // =====================================================
+
 .mobile-header{
     display:none;
 }
+
 .mobile-header__burger{
     position: absolute;
+    z-index: 2;
     top:$o-button-margin;
     left:$o-button-margin;
     background-color: $main-color;
     color:$white;
 }
+
 .mobile-header__burger.-new::after{
     content: "";
     display: inline-block;
@@ -22,21 +26,20 @@
     border-radius: 50%;
     background-color:$important;
 }
+
 .mobile-header__logo{
     height:$mobile-header-height;
-    margin:0 auto;
     display: block;
+    margin:0 auto;
     padding:1em 0;
 }
 
 @media screen and (max-width: $to-medium) {
     .mobile-header {
-        position:relative;
-        display: block;
         height:$mobile-header-height;
+        display: block;
+        position: relative;
         background-color: $white;
-        z-index:1;
         box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.2);
-
     }
 }
