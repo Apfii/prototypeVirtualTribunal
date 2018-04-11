@@ -92,39 +92,46 @@ function setupSlider2() {
         // Create slider object
         return {
             e: element,
-            x: 0,
-            mouseStartX: null,
-
-            nbItems: items.length,
+            width: element.offsetWidth,
             itemWidth: items[0].offsetWidth,
-            width: items[0].offsetWidth * items.length,
+            nbItems: items.length,
+            
+            currOffset: 0,
+            savedOffset: 0,
+            startDragX: null,
+            maxOffset: items[0].offsetWidth * items.length - element.offsetWidth,
+
+            isDragged: false,
+            isDragOver: true
         };
     }
 
     // Slider
     var slider = initSlider("test-slider-2");
-    console.log(slider);
 
     // 
     // https://www.w3schools.com/howto/howto_js_draggable.asp
     var onDragHandler = function(event) {
         event = event || window.event;
-        this.mouseStartX = event.clientX;
+        this.startDragX = event.clientX;
         document.onmousemove = elementDrag.bind(slider);
-        document.onmouseup = closeDragElement;
+        document.onmouseup = closeDragElement.bind(slider);
     }
 
     // 
     var elementDrag = function(event) {
         event = event || window.event;
         // calculate the new cursor position:
-        var offsetX = this.mouseStartX - event.clientX;
-        offsetX = offsetX > this.width ? this.width : offsetX < 0 ? 0 : offsetX;
-        this.x += offsetX;
-        this.e.style = "transform: translateX(-"+this.x+"px);";
+        this.currOffset = this.savedOffset + this.startDragX - event.clientX;
+        this.currOffset = this.currOffset > this.maxOffset 
+            ? this.maxOffset 
+            : this.currOffset < 0 
+                ? 0 : this.currOffset;
+        this.e.style = "transform: translateX(-"+this.currOffset+"px);";
     }
 
     var closeDragElement = function() {
+        this.savedOffset = this.currOffset;
         document.onmouseup = null;
         document.onmousemove = null;
     }
