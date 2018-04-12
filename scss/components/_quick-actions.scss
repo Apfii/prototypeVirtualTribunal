@@ -17,9 +17,11 @@
     transition: transform 0.5s;
     padding: 12px;
 }
+
 .quick-actions__expand-btn.-menu-opened {
     transform: rotate(45deg);
 }
+
 .quick-actions__container{
     display:block;
     position:relative;
@@ -28,7 +30,6 @@
     margin-bottom:25px;
 }
 
-$transtion-time: 0.5s;
 .quick-actions__action {
     display:flex;
     justify-content: center;
@@ -39,17 +40,17 @@ $transtion-time: 0.5s;
     height:50px;
     width:100%;
     transition:
-        visibility $transtion-time;
+        visibility $speed;
     > button {
         transition:
-            height $transtion-time, 
-            font-size $transtion-time, 
-            width $transtion-time,
-            padding $transtion-time
+            height $speed, 
+            font-size $speed, 
+            width $speed,
+            padding $speed
     }
     > label {
         transition:
-            font-size $transtion-time
+            font-size $speed
     }
 }
 
@@ -74,6 +75,7 @@ $transtion-time: 0.5s;
     cursor: inherit;
     white-space: nowrap;
 }
+
 .quick-actions__action-btn {
     display:inline-block;
     margin:auto;

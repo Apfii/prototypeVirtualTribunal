@@ -21,6 +21,7 @@
     width:2em;
     border-radius:50%;
 }
+
 @media screen and (max-width: $to-medium) {
     .cases-header {
         height: 6em;
@@ -30,6 +31,7 @@
         display: none;
     }
 }
+
 @media screen and (min-width: $from-medium) {
     .cases-header__my-cases {
         display: none;
