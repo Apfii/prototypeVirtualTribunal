@@ -183,7 +183,7 @@ function setupActionBtn() {
     expandActionBtn.onclick = overlay.onclick = function(){
         menuIsOpenned = !menuIsOpenned;
         toggleClassOnElement("-menu-opened", expandActionBtn);
-        toggleClassOnElement("-menu-closed", overlay);
+        toggleClassOnElement("-hidden", overlay);
 
         var actions = Array.from(document.getElementsByClassName('quick-actions__action'));
         if(menuIsOpenned) actions.reverse();
