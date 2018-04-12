@@ -15,7 +15,9 @@
     background-color: $important;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
     transition: transform 0.5s;
-    padding: 12px;
+    > svg {
+        width: 24px;
+    }
 }
 
 .quick-actions__expand-btn.-menu-opened {
